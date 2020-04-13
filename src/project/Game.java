@@ -95,14 +95,14 @@ public class Game
                 warCards.addCard(c2);
                 boolean done = false;
                 do {                    
-                    int num = c1.getValue().ordinal();
-                    if (!enoughCards(num)){
+                    
+                    if (!enoughCards(2)){
                         break gameLoop;
                         }
                     System.out.println("\nWar! Players put down ");
-                    System.out.println(num +" card(s)");
+                    System.out.println(2 +" card(s)");
                     
-                    for (int j = 1; j < num; j++) {
+                    for (int j = 1; j < 2; j++) {
                         c1 = players.get(0).playCard();
                         c2 = players.get(1).playCard();
                         warCards.addCard(c1);
