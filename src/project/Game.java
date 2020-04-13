@@ -52,7 +52,7 @@ public class Game
      * on your game.
      */
     public void play() {
-        Deck deck = new Deck(52);
+        Deck deck = new Deck();
         deck.generateDeck();
         deck.shuffle();
         deck.shuffle();
@@ -61,8 +61,8 @@ public class Game
         players.add(new Player("Vladyslav"));
         //players draw cards
         while(deck.getSize() >= 2) {
-            players.get(0).collectCard(deck.deal());
-            players.get(1).collectCard(deck.deal());
+            players.get(0).collectCard(deck.removeFromTop());
+            players.get(1).collectCard(deck.removeFromTop());
         }
         players.get(0).useWonPile();
         players.get(1).useWonPile();

@@ -19,16 +19,10 @@ public class Deck
    
     //The group of cards, stored in an ArrayList
     private ArrayList <Card> cards;
-    private int size;//the size of the grouping
-    
-    public Deck(int givenSize)
-    {
-        size = givenSize;
-    }
     
     public void generateDeck() {
         int count=0;
-        cards = new ArrayList<>(size);
+        cards = new ArrayList<>();
        
         for(Card.Suit s:Card.Suit.values())
         {
@@ -40,48 +34,22 @@ public class Deck
        }
     }
     
-    public Card deal() {
-        if(size == 0) return null;
-        size--;
-        return cards.get(size);
-    }
-    
     public void shuffle()
     {
         Collections.shuffle(cards);
     }
-    
+    //Remove a card from the top and return that card
     public Card removeFromTop() {
         Card card = cards.get(cards.size() - 1);
         cards.remove(cards.size() - 1);
         return card;
     }
-    
-    public void addToTop(Card topCard) {
-        cards.add(topCard);
-    }
-
-    // Add a group of cards to the bottom of a deck. Shuffle
-    // the group of cards first to ensure randomness.
-    public void addToBottom(Deck bottomCards) {
-        bottomCards.shuffle();
-
-        while(bottomCards.getSize() > 0) {
-            cards.add(0, bottomCards.removeFromTop());
-        }
-    }
     /**
      * @return the size of the group of cards
      */
     public int getSize() {
-        return size;
+        return cards.size();
     }
 
-    /**
-     * @param givenSize the max size for the group of cards
-     */
-    public void setSize(int givenSize) {
-        size = givenSize;
-    }
     
 }//end class
