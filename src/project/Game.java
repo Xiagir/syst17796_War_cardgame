@@ -95,7 +95,6 @@ public class Game
                 warCards.addCard(c2);
                 boolean done = false;
                 do {                    
-                    
                     if (!enoughCards(2)){
                         break gameLoop;
                         }
