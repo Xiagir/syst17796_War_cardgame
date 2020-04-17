@@ -17,7 +17,7 @@ import java.util.Collections;
 public class Deck 
 {
    
-    //The group of cards, stored in an ArrayList
+    //ArrayList of cards to create deck of cards
     private ArrayList <Card> cards;
     
     public void generateDeck() {
@@ -44,11 +44,13 @@ public class Deck
         cards.remove(cards.size() - 1);
         return card;
     }
-    /**
-     * @return the size of the group of cards
-     */
+  
     public int getSize() {
         return cards.size();
+    }
+    
+    public Card getCard(int index) {
+        return this.cards.get(index);
     }
 
     

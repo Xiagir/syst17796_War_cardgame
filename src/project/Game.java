@@ -56,9 +56,7 @@ public class Game
         deck.generateDeck();
         deck.shuffle();
         deck.shuffle();
-        
-        players.add(new Player("Maxim"));
-        players.add(new Player("Vladyslav"));
+
         //players draw cards
         while(deck.getSize() >= 2) {
             players.get(0).collectCard(deck.removeFromTop());
@@ -118,14 +116,14 @@ public class Game
                         done = true;
                     }
                     
-                } while (!done); // end of 100 turns 
+                } while (!done); // end of 50 turns 
             }
             System.out.println(players.get(0).getCardsLeft() + " to " + players.get(1).getCardsLeft());
         }
     }
     
     
-    boolean enoughCards(int n)
+    public boolean enoughCards(int n) // check if player has N amount of cards
     {
     if (players.get(0).getCardsLeft()< n ) {
         System.out.println(players.get(0).getPlayerID() +" has lost all of his cards");
@@ -139,7 +137,7 @@ public class Game
     }
     
     
-    Player getWinner()
+    public Player getWinner() // this method return the winner of the game
 {
     if (players.get(0).getCardsLeft()> players.get(1).getCardsLeft()) {
          return players.get(0);
@@ -149,13 +147,6 @@ public class Game
     } 
     else return null;
 }
-    
-    /**
-     * When the game is over, use this method to declare and display a winning
-     * player.
-     */
-//    public abstract void declareWinner();
-
    
     
 }//end class

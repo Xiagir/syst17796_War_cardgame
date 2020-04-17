@@ -13,7 +13,6 @@ package project;
  */
 public class Card
 {
-    //default modifier for child classes
     public enum Suit{HEARTS,SPADES,CLUBS,DIAMONDS};
     
     public enum Value{
@@ -35,58 +34,34 @@ public class Card
         private Value(int value) {
         this.value = value;
     }
-        public int getValue() {
-        return value;
-    }
+
     };
     
     private Suit suit;
     private Value value;
     
-     public Card(Suit s, Value v)
+    public Card(Suit s, Value v)
         {
             suit=s;
             value=v;
         }
-     
-     
-       /**
-     * @return the suit
-     */
-    public Suit getSuit() {
-        return suit;
-    }
 
-    /**
-     * @param suit the suit to set
-     */
-    public void setSuit(Suit suit) {
-        this.suit = suit;
-    }
-
-    /**
-     * @return the value
-     */
     public Value getValue() {
         return value;
     }
-
-    /**
-     * @param value the value to set
-     */
-    public void setValue(Value value) {
-        this.value = value;
+    
+    public void setValue(Value val) {
+        this.value = val;
+    }
+    public void setSuit(Suit suit) {
+        this.suit = suit;
     }
     
-    /**
-     * Students should implement this method for their specific children classes 
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-     */
-    
-@Override
+    @Override
   public String toString()
   {
     return this.value + " of " + this.suit;   
   }
     
 }
+

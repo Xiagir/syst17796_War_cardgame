@@ -12,7 +12,7 @@ public class Pile {
     private ArrayList<Card> pile;
     private int front,end;
     
-    Pile() {
+    public Pile() {
         pile = new ArrayList<>();
         front = 0; end = 0; 
     }
@@ -21,22 +21,22 @@ public class Pile {
         return end - front;
     }
     
-    void clear()
+    public void clear()
     {
         front = 0; end = 0;
     }
-    public void addCard(Card c) {
+    public void addCard(Card c) { // add one card to pile
         pile.add(c);
         end ++ ;
     }
     
-    public void addCards(Pile p) {
+    public void addCards(Pile p) { // add cards to pile
             while(p.getSize() > 0) {
                 addCard(p.nextCard());
             }
     }
         
-    public Card nextCard() {
+    public Card nextCard() { // returns card that needed to play next from bottom of the deck
         if(front == end) return null;
         
         Card c = pile.get(front);
